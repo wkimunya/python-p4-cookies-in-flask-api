@@ -11,6 +11,7 @@ def show_session(key):
     session["hello"] = session.get("hello") or "World"
     session["goodnight"] = session.get("goodnight") or "Moon"
 
+
     response = make_response(jsonify({
         'session': {
             'session_key': key,
@@ -20,6 +21,7 @@ def show_session(key):
         'cookies': [{cookie: request.cookies[cookie]}
             for cookie in request.cookies],
     }), 200)
+
 
     response.set_cookie('mouse', 'Cookie')
 
